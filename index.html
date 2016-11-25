@@ -1,1 +1,751 @@
-Hello World
+<!DOCTYPE html>                      
+<html> 
+<title>MoG</title>   
+<link rel="shortcut icon" href="icon1.png">                               
+<head> 
+<style>
+     .upper{
+	         width:1520px;
+			 height:70px;
+			 background-color:#e60000;
+			 margin:-10px;
+			 position:fixed;
+	       }
+	 .upperLinks{
+	             text-decoration:none;
+				 font-family:"Segoe UI";
+				 color:white;
+				 font-size:18px;
+				 position:fixed;
+				 letter-spacing:1px;
+	             }
+	a.upperLinks:hover{background-color:black;
+	                   font-size:20px;
+					   height:23px;
+					   }
+	
+	 .search{
+			   height:28px;
+			   width:230px;
+			   border-radius:5px;
+			   position:fixed;
+			   font-family:"Segoe UI";
+			   color: rgba(246, 0, 0, 0.5);
+			   background-color: rgba(255, 255, 255, 1);
+			   left:930px; top:15px;
+			   border-color:red;
+	           }
+    .search:hover{
+		       border:1px solid #330000;
+			   box-shadow:1px 1px 20px 1px #330000;
+		                  }				   
+	
+    .mid{height:5500px;
+	     background-image:url("back12.jpg");
+		 margin:0 -10px 0 -10px;
+		}
+	.content{
+	         height:5200px;
+			 width:1050px;
+			background-color:#ffe5e5;
+			margin-left:240px;
+	        }
+    .links{
+	         text-decoration:none;
+			 font-size:21px;font-family: Roboto,sans-serif!important;
+			 border-left:6px solid red;
+			 padding:3px 8px 3px 8px;
+			 color:#801a00;display:block;
+	       }
+    a.links:hover{color:#cca300;
+	        border-left:6px solid #cca300;
+			text-decoration:underline;
+	        }
+    
+	.video {  
+	            height:315px;width:220px;
+				background-color:white;
+				border-radius:5px;
+	      }
+    div.video:hover{box-shadow:1px 1px 10px 1px red;}
+	p.change:hover{color:#cca300;}
+	a.facebook:hover{color:blue;}
+	
+	.signUp{     text-decoration:none;
+				 font-family:"Segoe UI";
+				 color:white;
+				 font-size:18px;
+				 position:fixed;
+				 background-color:#cc0000;
+				 border-radius:5px;
+				 }
+	a.signUp:hover{background-color:white;
+	               color:red;
+	               }		
+
+/* ***modal*** */
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+				   
+		  
+</style>
+</head>
+<body>
+<div class="upper">
+<img src="mog1.png" style="height:70px;width:70px;position:fixed;margin:0 0 0 80px;border-radius:10px 10px 2px 2px;"> 
+<a href="index.html" class="upperLinks" style="padding:20px 15px 27px 15px; left:200px;"> HOME</a>
+<a href="index.html" class="upperLinks" style="padding:20px 15px 27px 15px; left:285px">MUSIC</a>         
+<a href="index.html" class="upperLinks" style="padding:20px 15px 27px 15px; left:373px">MOVIES</a>
+<a href="index.html" class="upperLinks" style="padding:20px 15px 27px 15px; left:473px">NEWS</a>
+<a href="index.html" class="upperLinks" style="padding:20px 15px 27px 15px; left:555px">TV SHOWS</a>
+<a href="index.html" class="upperLinks" style="padding:20px 15px 27px 15px; left:680px">SPORTS</a>
+<a href="index.html" class="upperLinks" style="padding:20px 15px 27px 15px; left:778px">LANGUAGE</a>
+<form ><input id="s1" type="text" value="  SEARCH" onmouseup="this.value=''"  onmouseout="this.value='  SEARCH'" class="search"></form>
+<img src="search.png" style="height:20px;width:20px;left:1130px;top:20px;position:fixed;">
+
+
+<a href="index.html" ><img src="fb0.png" style="position:fixed;left:1300px;top:17px;height:25px;width:25px;" onmouseover="this.src='fb1.png'" onmouseout="this.src='fb0.png'"></a>
+<a href="index.html" ><img src="twitter.png" style="position:fixed;left:1338px;top:20px;height:25px;width:25px;" onmouseover="this.src='twitter1.png'" onmouseout="this.src='twitter.png'"></a>
+<a href="index.html" ><img src="google.png" style="position:fixed;left:1370px;top:20px;height:23px;width:23px;" onmouseover="this.src='google+1.png'" onmouseout="this.src='google.png'"></a>
+
+<a href="index.html" class="signUp" style="padding:2px 7px 7px 7px;left:1400px;top:15px">Sign up</a>
+
+</div>
+<script src="right.js">  </script>
+<div class="mid" >
+<div class="content">
+        <a href="index.html"><img src="upper1.jpg" name="slide" style="height:500px; width:1050px;margin-top:60px; border-radius:0 0 5px 5px;"></a>
+		
+		<a href="index.html" class="links" style="width:200px;margin:30px 0 0 50px;">You May Also Like</a><br>
+		
+		
+		<div class="video" style="margin-left:50px;float:left;">
+		<img id="v11" src="airlift.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">AIRLIFT THEATRICAL TRAILER</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p></div>
+		<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <iframe class="modal-content" width="854" height="480"  frameborder="0" allowfullscreen id="img01"></iframe>
+  
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('v11');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = "https://www.youtube.com/embed/Xwyb7fT65Ac";
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+   location.reload();
+}
+</script>
+		
+		<div class="video" style="margin-left:20px;float:left;"> 
+		<img id="v12" src="fitoor.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Fitoor Official Trailer</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div>
+		<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <iframe class="modal-content" width="854" height="480"  frameborder="0" allowfullscreen id="img01"></iframe>
+  
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('v12');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = "https://www.youtube.com/embed/Iqu_W5W4YO4";
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+   location.reload();
+}
+</script>
+		
+		<div class="video" style="margin-left:20px;float:left;"> 
+        <img id="v13" src="wazir.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Wazir - Official Trailer </p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div>
+		<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <iframe class="modal-content" width="854" height="480"  frameborder="0" allowfullscreen id="img01"></iframe>
+  
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('v13');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = "https://www.youtube.com/embed/gdwM7xKOph0";
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+   location.reload();
+}
+</script>
+		
+		<div class="video" style="margin-left:20px;float:left;">  
+        <img id="v14" src="star_wars.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">Star Wars: The Force Awakens Trailer (Official)</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p>	</div>
+		<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <iframe class="modal-content" width="854" height="480"  frameborder="0" allowfullscreen id="img01"></iframe>
+  
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('v14');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = "https://www.youtube.com/embed/sGbxmsDFVnE";
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+   location.reload();
+}
+</script>
+		
+	    <a href="index.html" style="font-size:30px;font-family:Courier New;color:red;text-decoration:none;"><p style="margin:100px 0 0 1010px;" class="change" > &#8811 </p></a>
+		
+<!-- 1....................................................................................................................................................................-->
+<a href="index.html" class="links" style="width:180px;margin:220px 0 0 50px;">T-Series Special</a><br>
+		
+		<div class="video" style="margin-left:50px;float:left;">
+		<img id ="v21" src="photo\mai_rahoo.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">Mai Rahoon ya na</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MUSIC</p></div>
+		<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <iframe class="modal-content" width="854" height="480"  frameborder="0" allowfullscreen id="img01"></iframe>
+  
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('v21');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = "https://www.youtube.com/embed/4WB5y4DAcKE";
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+   location.reload();
+}
+</script>
+		
+		<div class="video" style="margin-left:20px;float:left;"> 
+		<img id ="v22" src="photo\yahihoon.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Yahi hoon mai</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MUSIC</p></div>
+		<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <iframe class="modal-content" width="854" height="480"  frameborder="0" allowfullscreen id="img01"></iframe>
+  
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('v22');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = "https://www.youtube.com/embed/LfrmEn7yw7o";
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+   location.reload();
+}
+</script>
+		
+		<div class="video" style="margin-left:20px;float:left;"> 
+        <img src="photo\allblack.jpg" id ="v23" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">All-Black </p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MUSIC</p></div>
+		<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <iframe class="modal-content" width="854" height="480"  frameborder="0" allowfullscreen id="img01"></iframe>
+  
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('v23');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = "https://www.youtube.com/embed/ReXw6TOnUOc";
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+   location.reload();
+}
+</script>
+		
+		<div class="video" style="margin-left:20px;float:left;">  
+        <img id ="v24" src="photo\janamjanam.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">Janam-janam|Dilwale</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MUSIC</p>	</div>
+		<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <iframe class="modal-content" width="854" height="480"  frameborder="0" allowfullscreen id="img01"></iframe>
+  
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('v24');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = "https://www.youtube.com/embed/pIBoAh4OXhQ";
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+   location.reload();
+}
+</script>
+		
+		<a href="index.html" style="font-size:30px;font-family:Courier New;color:red;text-decoration:none;"><p style="margin:100px 0 0 1010px;" class="change" > &#8811 </p></a>
+		<!-- ....................................................................................................................................................................-->
+	
+
+	
+		<a href="index.html" class="links" style="width:120px;margin:220px 0 0 50px;">New Movies</a><br>
+		
+		<div class="video" style="margin-left:50px;float:left;">
+		<img id="v11" src="airlift.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">AIRLIFT THEATRICAL TRAILER</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p></div>
+		<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <iframe class="modal-content" width="854" height="480"  frameborder="0" allowfullscreen id="img01"></iframe>
+  
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('v11');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = "https://www.youtube.com/embed/sGbxmsDFVnE";
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+   location.reload();
+}
+</script>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+		<img src="fitoor.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Fitoor Official Trailer</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+        <img src="wazir.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Wazir - Official Trailer </p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;">  
+        <img src="star_wars.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">Star Wars: The Force Awakens Trailer (Official)</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p>	</div></a>
+		<a href="index.html" style="font-size:30px;font-family:Courier New;color:red;text-decoration:none;"><p style="margin:100px 0 0 1010px;" class="change" > &#8811 </p></a>
+		<!-- ....................................................................................................................................................................-->
+	
+		<a href="index.html" class="links" style="width:200px;margin:220px 0 0 50px;">Watch it Again</a><br>
+		
+		<a href="index.html"><div class="video" style="margin-left:50px;float:left;">
+		<img src="airlift.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">AIRLIFT THEATRICAL TRAILER</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+		<img src="fitoor.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Fitoor Official Trailer</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+        <img src="wazir.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Wazir - Official Trailer </p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;">  
+        <img src="star_wars.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">Star Wars: The Force Awakens Trailer (Official)</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p>	</div></a>
+		<a href="index.html" style="font-size:30px;font-family:Courier New;color:red;text-decoration:none;"><p style="margin:100px 0 0 1010px;" class="change" > &#8811 </p></a>
+<!--2 ....................................................................................................................................................................-->
+	
+		<a href="index.html" class="links" style="width:150px;margin:220px 0 0 50px;">Sports-spacial</a><br>
+		
+		<a href="index.html"><div class="video" style="margin-left:50px;float:left;">
+		<img src="photo\sports1.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">Hockey-spacial</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">Sports</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+		<img src="photo\sports2.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Basket-Ball</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+        <img src="photo\sports3.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Wazir - Official Trailer </p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;">  
+        <img src="photo\sports4.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">Star Wars: The Force Awakens Trailer (Official)</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p>	</div></a>
+		<a href="index.html" style="font-size:30px;font-family:Courier New;color:red;text-decoration:none;"><p style="margin:100px 0 0 1010px;" class="change" > &#8811 </p></a>
+<!-- ....................................................................................................................................................................-->
+	
+		<a href="index.html" class="links" style="width:200px;margin:220px 0 0 50px;">Aus vs Ind - ODI</a><br>
+		
+		<a href="index.html"><div class="video" style="margin-left:50px;float:left;">
+		<img src="photo\ausind1.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">AIRLIFT THEATRICAL TRAILER</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+		<img src="photo\ausind2.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Fitoor Official Trailer</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+        <img src="photo\ausind3.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Wazir - Official Trailer </p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;">  
+        <img src="photo\ausind4.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">Star Wars: The Force Awakens Trailer (Official)</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p>	</div></a>
+		<a href="index.html" style="font-size:30px;font-family:Courier New;color:red;text-decoration:none;"><p style="margin:100px 0 0 1010px;" class="change" > &#8811 </p></a>
+<!-- ....................................................................................................................................................................-->
+	
+		<a href="index.html" class="links" style="width:130px;margin:220px 0 0 50px;">Top Tracks</a><br>
+		
+		<a href="index.html"><div class="video" style="margin-left:50px;float:left;">
+		<img src="photo\tracks1.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">AIRLIFT THEATRICAL TRAILER</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+		<img src="photo\tracks2.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Fitoor Official Trailer</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+        <img src="photo\tracks3.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Wazir - Official Trailer </p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;">  
+        <img src="photo\tracks4.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">Star Wars: The Force Awakens Trailer (Official)</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p>	</div></a>
+		<a href="index.html" style="font-size:30px;font-family:Courier New;color:red;text-decoration:none;"><p style="margin:100px 0 0 1010px;" class="change" > &#8811 </p></a>
+<!-- ....................................................................................................................................................................-->
+	
+		<a href="index.html" class="links" style="width:230px;margin:220px 0 0 50px;">Aaj Tak (Special News)</a><br>
+		
+		<a href="index.html"><div class="video" style="margin-left:50px;float:left;">
+		<img src="photo\aajtak4.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">AIRLIFT THEATRICAL TRAILER</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+		<img src="photo\aajtak1.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Fitoor Official Trailer</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+        <img src="photo\aajtak2.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Wazir - Official Trailer </p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;">  
+        <img src="photo\aajtak3.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">Star Wars: The Force Awakens Trailer (Official)</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p>	</div></a>
+		<a href="index.html" style="font-size:30px;font-family:Courier New;color:red;text-decoration:none;"><p style="margin:100px 0 0 1010px;" class="change" > &#8811 </p></a>
+<!-- ....................................................................................................................................................................-->
+	
+		<a href="index.html" class="links" style="width:150px;margin:220px 0 0 50px;">Daily Soaps</a><br>
+		
+		<a href="index.html"><div class="video" style="margin-left:50px;float:left;">
+		<img src="photo\daily2.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">AIRLIFT THEATRICAL TRAILER</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+		<img src="photo\daily4.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Fitoor Official Trailer</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+        <img src="photo\daily3.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Wazir - Official Trailer </p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;">  
+        <img src="photo\daily1.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">Star Wars: The Force Awakens Trailer (Official)</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p>	</div></a>
+		<a href="index.html" style="font-size:30px;font-family:Courier New;color:red;text-decoration:none;"><p style="margin:100px 0 0 1010px;" class="change" > &#8811 </p></a>
+<!-- ....................................................................................................................................................................-->
+	
+		<a href="index.html" class="links" style="width:200px;margin:220px 0 0 50px;">Best of BBL 2015</a><br>
+		
+		<a href="index.html"><div class="video" style="margin-left:50px;float:left;">
+		<img src="photo\bbl1.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">AIRLIFT THEATRICAL TRAILER</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+		<img src="photo\bbl2.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Fitoor Official Trailer</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+        <img src="photo\bbl3.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Wazir - Official Trailer </p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;">  
+        <img src="photo\bbl4.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">Star Wars: The Force Awakens Trailer (Official)</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p>	</div></a>
+		<a href="index.html" style="font-size:30px;font-family:Courier New;color:red;text-decoration:none;"><p style="margin:100px 0 0 1010px;" class="change" > &#8811 </p></a>
+<!-- ....................................................................................................................................................................-->
+	
+		
+		<a href="index.html" class="links" style="width:180px;margin:220px 0 0 50px;">Popular Movies</a><br>
+		
+		<a href="index.html"><div class="video" style="margin-left:50px;float:left;">
+		<img src="photo\movie1.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">AIRLIFT THEATRICAL TRAILER</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+		<img src="photo\movie2.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Fitoor Official Trailer</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;"> 
+        <img src="photo\movie3.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:5px 0 0 5px;">Wazir - Official Trailer </p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:20px 0 0 5px;">MOVIES</p></div></a>
+		
+		<a href="index.html"><div class="video" style="margin-left:20px;float:left;">  
+        <img src="photo\movie4.jpg" style="height:250px;width:220px;border-radius:5px;">
+        <p style="font-family:Roboto,sans-serif!important;color:#2F4F4F;margin:-1px 0 0 5px;">Star Wars: The Force Awakens Trailer (Official)</p>
+		<p style="font-family:Roboto,sans-serif!important;color:#808080;margin:5px 0 0 5px;">MOVIES</p>	</div></a>
+		<a href="index.html" style="font-size:30px;font-family:Courier New;color:red;text-decoration:none;"><p style="margin:100px 0 0 1010px;" class="change" > &#8811 </p></a>
+<!-- ....................................................................................................................................................................-->
+	
+
+
+
+
+		
+</div>
+</div>
+</body>
+</html>
